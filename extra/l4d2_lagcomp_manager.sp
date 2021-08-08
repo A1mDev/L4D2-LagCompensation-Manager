@@ -7,7 +7,8 @@
 #include <sdktools>
 
 #if DEBUG
-//'l4d2_lagcompmanager_test' extension is required for debugging
+// 'l4d2_lagcompmanager_test' extension is required for debugging
+// https://github.com/A1mDev/L4D2-LagCompensation-Manager
 #include <l4d2_lagcompmanager_test>
 #endif
 
