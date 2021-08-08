@@ -2,7 +2,7 @@
  * vim: set ts=4 :
  * =============================================================================
  * SourceMod LagCompManager Extension
- * Copyright (C) 2021 A1mDev.  All rights reserved.
+ * Copyright (C) 2021 A1mDev. All rights reserved.
  * =============================================================================
  *
  * This program is free software; you can redistribute it and/or modify it under

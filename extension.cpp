@@ -48,10 +48,11 @@ SMEXT_LINK(&g_LagCompManager);
 bool LagCompManager::SDK_OnMetamodLoad(ISmmAPI *ismm, char *error, size_t maxlength, bool late)
 {
 	size_t maxlen = maxlength;
+	
 	gpGlobals = ismm->GetCGlobals();
 	GET_V_IFACE_ANY(GetServerFactory, gameents, IServerGameEnts, INTERFACEVERSION_SERVERGAMEENTS);
-	//GET_V_IFACE_CURRENT(GetEngineFactory, engine, IVEngineServer, INTERFACEVERSION_VENGINESERVER);
 	GET_V_IFACE_CURRENT(GetEngineFactory, icvar, ICvar, CVAR_INTERFACE_VERSION);
+	
 	g_pCVar = icvar;
 	
 	return true;
@@ -103,7 +104,6 @@ cell_t LagComp_ShowAllEntities(IPluginContext *pContext, const cell_t *params)
 		i != CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool().InvalidIndex(); \
 		i = CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool().NextInorder(i)
 	) {
-		//CBaseEntity *pAddEntity = CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool()[i].Get();
 		edict_t *pAddEdict = gamehelpers->GetHandleEntity(CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool()[i]);
 		CBaseEntity *pAddEntity = gameents->EdictToBaseEntity(pAddEdict);
 		if (!pAddEntity) {
@@ -127,7 +127,6 @@ cell_t LagComp_FindEntity(IPluginContext *pContext, const cell_t *params)
 	pContext->LocalToPhysAddr(params[2], &addr);
 	*addr = 0;
 	
-	//this + 88
 	CBaseEntity *pEntity = UTIL_GetCBaseEntity(target, false);
 	if (pEntity == NULL) {
 		return pContext->ThrowNativeError("The specified object is invalid '%d'!", target);
@@ -136,7 +135,6 @@ cell_t LagComp_FindEntity(IPluginContext *pContext, const cell_t *params)
 	EHANDLE eh = pEntity;
 	short unsigned int iIndex = CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool().Find(eh);
 	if (iIndex != CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool().InvalidIndex()) {
-		//CBaseEntity *pGetEntity = CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool()[iIndex].Get();
 		edict_t *pGetEdict = gamehelpers->GetHandleEntity(CLagCompensationManager::LagCompInstance->m_AdditionalEntitiesPool()[iIndex]);
 		CBaseEntity *pGetEntity = gameents->EdictToBaseEntity(pGetEdict);
 		if (pGetEntity == NULL) {

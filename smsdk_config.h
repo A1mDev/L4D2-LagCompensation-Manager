@@ -1,8 +1,8 @@
 /**
  * vim: set ts=4 :
  * =============================================================================
- * L4D2 Ladder Rambos SourceMod Extension
- * Copyright (C) 2015 Ilya "Visor" Komarov
+ * SourceMod LagCompManager Extension
+ * Copyright (C) 2021 A1mDev. All rights reserved.
  * =============================================================================
  *
  * This program is free software; you can redistribute it and/or modify it under
