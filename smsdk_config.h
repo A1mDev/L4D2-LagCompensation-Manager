@@ -42,7 +42,7 @@
 #define SMEXT_CONF_DESCRIPTION	"This extension is required to debug the plugin 'l4d2_lagcomp_manager'"
 #define SMEXT_CONF_VERSION		"0.4"
 #define SMEXT_CONF_AUTHOR		"A1m`"
-#define SMEXT_CONF_URL			"http://aurora-servers.com"
+#define SMEXT_CONF_URL			"https://github.com/A1mDev/L4D2-LagCompensation-Manager"
 #define SMEXT_CONF_LOGTAG		"LagComp"
 #define SMEXT_CONF_LICENSE		"MIT"
 #define SMEXT_CONF_DATESTRING	__DATE__
